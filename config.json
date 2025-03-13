@@ -1,0 +1,11 @@
+{
+  "client": {
+    "mainPcIp": "your ip",
+    "mainPcPort": 3838,
+    "reconnectInterval": 5000
+  },
+  "server": {
+    "port": 3838,
+    "maxClients": 5
+  }
+} 
