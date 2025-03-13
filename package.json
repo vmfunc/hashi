@@ -1,11 +1,30 @@
 {
   "name": "hashi",
-  "module": "index.ts",
+  "version": "1.0.0",
+  "description": "",
+  "module": "src/index.ts",
   "type": "module",
+  "scripts": {
+    "start": "bun run src/index.ts",
+    "client": "bun run src/index.ts client",
+    "server": "bun run src/index.ts server",
+    "build": "bun run build:client && bun run build:server && bun run build:config",
+    "build:client": "bun build src/client.ts --compile --minify --outfile ./dist/hashi-client.exe",
+    "build:server": "bun build src/server-exe.ts --compile --minify --outfile ./dist/hashi-server.exe",
+    "build:config": "bun build src/config-exe.ts --compile --minify --outfile ./dist/hashi-config.exe",
+    "config": "bun run src/index.ts config",
+    "config:show": "bun run src/index.ts config show",
+    "config:set-ip": "bun run src/index.ts config set-client-ip"
+  },
   "devDependencies": {
     "@types/bun": "latest"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@types/ws": "^8.18.0",
+    "discord-rpc": "^4.0.1",
+    "ws": "^8.18.1"
   }
 }
